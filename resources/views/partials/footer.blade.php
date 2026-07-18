@@ -1,7 +1,5 @@
-<footer>
+<footer class="bg-white shadow mt-10 p-4 text-center text-gray-500">
 
-<p>
-© 2026 Global Supply Chain Monitoring
-</p>
+    © {{ date('Y') }} Global Supply Chain Monitoring
 
 </footer>

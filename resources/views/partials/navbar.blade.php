@@ -1,5 +1,11 @@
-<nav>
+<nav class="bg-white shadow px-8 py-4 flex justify-between items-center">
 
-    <h2>Global Supply Chain Monitoring</h2>
+    <h1 class="text-2xl font-semibold">
+        Dashboard
+    </h1>
+
+    <div class="text-gray-600">
+        Welcome, Admin
+    </div>
 
 </nav>

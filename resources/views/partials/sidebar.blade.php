@@ -1,23 +1,47 @@
-<aside>
+<aside class="w-64 bg-slate-800 text-white min-h-screen">
 
-<ul>
+    <div class="p-6 text-2xl font-bold border-b border-slate-700">
+        Global Supply Chain
+    </div>
 
-<li>Dashboard</li>
+    <nav class="mt-6">
 
-<li>Economic Data</li>
+        <a href="/" class="block px-6 py-3 hover:bg-slate-700">
+            Dashboard
+        </a>
 
-<li>Weather</li>
+        <a href="/countries" class="block px-6 py-3 hover:bg-slate-700">
+            Countries
+        </a>
 
-<li>News</li>
+        <a href="/economic-data" class="block px-6 py-3 hover:bg-slate-700">
+            Economic Data
+        </a>
 
-<li>Currency</li>
+        <a href="/weather" class="block px-6 py-3 hover:bg-slate-700">
+            Weather
+        </a>
 
-<li>Ports</li>
+        <a href="/news" class="block px-6 py-3 hover:bg-slate-700">
+            News
+        </a>
 
-<li>Shipping Routes</li>
+        <a href="/currency" class="block px-6 py-3 hover:bg-slate-700">
+            Currency
+        </a>
 
-<li>Risk Analysis</li>
+        <a href="/ports" class="block px-6 py-3 hover:bg-slate-700">
+            Ports
+        </a>
 
-</ul>
+        <a href="/shipping-routes" class="block px-6 py-3 hover:bg-slate-700">
+            Shipping Routes
+        </a>
+
+        <a href="/risk-analysis" class="block px-6 py-3 hover:bg-slate-700">
+            Risk Analysis
+        </a>
+
+    </nav>
 
 </aside>
