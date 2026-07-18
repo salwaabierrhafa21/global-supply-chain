@@ -6,5 +6,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class NewsCache extends Model
 {
-    //
+    protected $fillable = [
+
+        'country_id',
+
+        'title',
+
+        'description',
+
+        'source',
+
+        'published_at'
+
+    ];
 }
