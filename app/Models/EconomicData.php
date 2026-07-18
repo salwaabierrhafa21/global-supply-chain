@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class EconomicData extends Model
 {
@@ -21,4 +22,9 @@ class EconomicData extends Model
         'recorded_at'
 
     ];
+
+    public function country(): BelongsTo
+{
+    return $this->belongsTo(Country::class);
+}
 }

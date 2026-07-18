@@ -19,4 +19,9 @@ class NewsCache extends Model
         'published_at'
 
     ];
+
+    public function country(): BelongsTo
+{
+    return $this->belongsTo(Country::class);
+}
 }

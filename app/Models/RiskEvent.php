@@ -25,4 +25,9 @@ class RiskEvent extends Model
         'status'
 
     ];
+
+    public function country(): BelongsTo
+{
+    return $this->belongsTo(Country::class);
+}
 }

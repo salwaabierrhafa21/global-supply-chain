@@ -25,4 +25,9 @@ class RiskScore extends Model
         'calculated_at'
 
     ];
+
+    public function country(): BelongsTo
+{
+    return $this->belongsTo(Country::class);
+}
 }
