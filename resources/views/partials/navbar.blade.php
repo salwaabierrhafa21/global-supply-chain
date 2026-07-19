@@ -1,11 +1,32 @@
-<nav class="bg-white shadow px-8 py-4 flex justify-between items-center">
+<nav
+    class="flex justify-between items-center px-10 py-6">
 
-    <h1 class="text-2xl font-semibold">
-        Dashboard
-    </h1>
+    <div>
 
-    <div class="text-gray-600">
-        Welcome, Admin
+        <h2
+            class="text-3xl font-bold text-white">
+            Dashboard
+        </h2>
+
+        <p
+            class="text-violet-300 mt-1">
+
+            Welcome back!
+
+        </p>
+
+    </div>
+
+    <div
+        class="glass px-6 py-3">
+
+        <span
+            class="text-violet-100">
+
+            Administrator
+
+        </span>
+
     </div>
 
 </nav>

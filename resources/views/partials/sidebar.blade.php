@@ -1,45 +1,83 @@
-<aside class="w-64 bg-slate-800 text-white min-h-screen">
+<aside
+    class="w-72 min-h-screen bg-[#1B1740]/90 backdrop-blur-xl border-r border-white/10 shadow-2xl">
 
-    <div class="p-6 text-2xl font-bold border-b border-slate-700">
-        Global Supply Chain
+    <div class="p-8">
+
+        <h1
+            class="text-2xl font-bold text-white tracking-wide">
+            Global Supply
+        </h1>
+
+        <p
+            class="text-sm text-violet-300 mt-1">
+            Chain Monitoring
+        </p>
+
     </div>
 
-    <nav class="mt-6">
+    <nav class="mt-8">
 
-        <a href="/" class="block px-6 py-3 hover:bg-slate-700">
+        <a href="/"
+            class="flex items-center px-8 py-4 text-violet-100 hover:bg-violet-700/30 transition rounded-l-full">
+
             Dashboard
+
         </a>
 
-        <a href="/countries" class="block px-6 py-3 hover:bg-slate-700">
+        <a href="/countries"
+            class="flex items-center px-8 py-4 text-violet-100 hover:bg-violet-700/30 transition rounded-l-full">
+
             Countries
+
         </a>
 
-        <a href="/economic-data" class="block px-6 py-3 hover:bg-slate-700">
+        <a href="/economic-data"
+            class="flex items-center px-8 py-4 text-violet-100 hover:bg-violet-700/30 transition rounded-l-full">
+
             Economic Data
+
         </a>
 
-        <a href="/weather" class="block px-6 py-3 hover:bg-slate-700">
+        <a href="/weather"
+            class="flex items-center px-8 py-4 text-violet-100 hover:bg-violet-700/30 transition rounded-l-full">
+
             Weather
+
         </a>
 
-        <a href="/news" class="block px-6 py-3 hover:bg-slate-700">
+        <a href="/news"
+            class="flex items-center px-8 py-4 text-violet-100 hover:bg-violet-700/30 transition rounded-l-full">
+
             News
+
         </a>
 
-        <a href="/currency" class="block px-6 py-3 hover:bg-slate-700">
+        <a href="/currency"
+            class="flex items-center px-8 py-4 text-violet-100 hover:bg-violet-700/30 transition rounded-l-full">
+
             Currency
+
         </a>
 
-        <a href="/ports" class="block px-6 py-3 hover:bg-slate-700">
+        <a href="/ports"
+            class="flex items-center px-8 py-4 text-violet-100 hover:bg-violet-700/30 transition rounded-l-full">
+
             Ports
+
         </a>
 
-        <a href="/shipping-routes" class="block px-6 py-3 hover:bg-slate-700">
+        <a href="/shipping-routes"
+            class="flex items-center px-8 py-4 text-violet-100 hover:bg-violet-700/30 transition rounded-l-full">
+
             Shipping Routes
+
         </a>
 
-        <a href="/risk-analysis" class="block px-6 py-3 hover:bg-slate-700">
+        <a href="/risk-analysis"
+            class="flex items-center px-8 py-4 text-violet-100 hover:bg-violet-700/30 transition rounded-l-full">
+
             Risk Analysis
+
         </a>
 
     </nav>
