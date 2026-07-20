@@ -37,6 +37,17 @@
 
 </div>
 
+
+<script type="module">
+    import { createIcons } from 'lucide';
+    import * as icons from 'lucide';
+
+    createIcons({
+        icons
+    });
+</script>
+
+
 </body>
 
 </html>

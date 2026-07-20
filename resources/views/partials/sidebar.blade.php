@@ -27,56 +27,56 @@
         <a href="/countries"
             class="flex items-center px-8 py-4 text-violet-100 hover:bg-violet-700/30 transition rounded-l-full">
 
-            Countries
+            Negara
 
         </a>
 
         <a href="/economic-data"
             class="flex items-center px-8 py-4 text-violet-100 hover:bg-violet-700/30 transition rounded-l-full">
 
-            Economic Data
+            Data Ekonomi
 
         </a>
 
         <a href="/weather"
             class="flex items-center px-8 py-4 text-violet-100 hover:bg-violet-700/30 transition rounded-l-full">
 
-            Weather
+            Cuaca
 
         </a>
 
         <a href="/news"
             class="flex items-center px-8 py-4 text-violet-100 hover:bg-violet-700/30 transition rounded-l-full">
 
-            News
+            Berita
 
         </a>
 
         <a href="/currency"
             class="flex items-center px-8 py-4 text-violet-100 hover:bg-violet-700/30 transition rounded-l-full">
 
-            Currency
+            Nilai Tukar
 
         </a>
 
         <a href="/ports"
             class="flex items-center px-8 py-4 text-violet-100 hover:bg-violet-700/30 transition rounded-l-full">
 
-            Ports
+            Pelabuhan
 
         </a>
 
         <a href="/shipping-routes"
             class="flex items-center px-8 py-4 text-violet-100 hover:bg-violet-700/30 transition rounded-l-full">
 
-            Shipping Routes
+            Jalur Pelayaran
 
         </a>
 
         <a href="/risk-analysis"
             class="flex items-center px-8 py-4 text-violet-100 hover:bg-violet-700/30 transition rounded-l-full">
 
-            Risk Analysis
+            Analisis Risiko
 
         </a>
 

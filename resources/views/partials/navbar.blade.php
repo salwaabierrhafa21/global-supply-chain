@@ -11,7 +11,7 @@
         <p
             class="text-violet-300 mt-1">
 
-            Welcome back!
+            Selamat datang!
 
         </p>
 
@@ -23,7 +23,7 @@
         <span
             class="text-violet-100">
 
-            Administrator
+            ADMIN
 
         </span>
 
