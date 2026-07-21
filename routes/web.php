@@ -16,7 +16,7 @@ Route::get('/', [DashboardController::class, 'index']);
 
 Route::resource('countries', CountryController::class);
 
-Route::get('/economic-data', [EconomicDataController::class, 'index']);
+Route::resource('economic-data', EconomicDataController::class);
 
 Route::get('/weather', [WeatherController::class, 'index']);
 
