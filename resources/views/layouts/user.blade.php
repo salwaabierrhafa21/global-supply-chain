@@ -33,13 +33,13 @@
 
 <div class="flex min-h-screen">
 
-    {{-- Sidebar --}}
-    @include('partials.sidebar')
+    {{-- Sidebar User --}}
+@include('partials.user-sidebar')
 
-    <div class="flex-1">
+<div class="flex-1">
 
-        {{-- Navbar --}}
-        @include('partials.navbar')
+    {{-- Navbar User --}}
+    @include('partials.user-navbar')
 
         {{-- Content --}}
         <main class="px-10 py-8">

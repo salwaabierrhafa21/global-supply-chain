@@ -17,16 +17,14 @@
 
     </div>
 
-    <div
-        class="glass px-6 py-3">
+    <div class="px-6 py-3 rounded-full bg-white/10 text-white">
 
-        <span
-            class="text-violet-100">
+    {{ Auth::user()->name }}
 
-            ADMIN
+    <span class="text-violet-300 text-sm">
+        ({{ ucfirst(Auth::user()->role) }})
+    </span>
 
-        </span>
-
-    </div>
+</div>
 
 </nav>

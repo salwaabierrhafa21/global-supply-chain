@@ -19,12 +19,18 @@ class EconomicData extends Model
 
         'economic_growth',
 
+        'population',
+
+        'exports',
+
+        'imports',
+
         'recorded_at'
 
     ];
 
     public function country(): BelongsTo
-{
-    return $this->belongsTo(Country::class);
-}
+    {
+        return $this->belongsTo(Country::class);
+    }
 }

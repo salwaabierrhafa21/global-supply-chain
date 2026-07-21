@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 use App\Models\Country;
 
 class CountryController extends Controller
@@ -97,5 +98,100 @@ class CountryController extends Controller
 
         return redirect()->route('countries.index')
             ->with('success', 'Negara berhasil dihapus.');
+    }
+
+    /**
+     * Import data negara dari REST Countries API
+     */
+    public function import()
+    {
+        $response = Http::timeout(60)->get(
+    'https://restcountries.com/api/v1/all'
+);
+
+        if (!$response->successful()) {
+            return redirect()
+                ->route('countries.index')
+                ->with('error', 'Gagal mengambil data dari REST Countries API.');
+        }
+
+        $countries = $response->json();
+
+        foreach ($countries as $item) {
+
+            // Pastikan data penting ada
+            if (
+                !isset($item['cca2']) ||
+                !isset($item['name']['common'])
+            ) {
+                continue;
+            }
+
+            // Currency
+            $currencyCode = null;
+            $currencyName = null;
+
+            if (!empty($item['currencies']) && is_array($item['currencies'])) {
+
+                $keys = array_keys($item['currencies']);
+
+                if (!empty($keys)) {
+
+                    $currencyCode = $keys[0];
+
+                    $currencyName = $item['currencies'][$currencyCode]['name'] ?? null;
+                }
+            }
+
+            // Language
+            $language = null;
+
+            if (!empty($item['languages']) && is_array($item['languages'])) {
+
+                $language = implode(', ', array_values($item['languages']));
+            }
+
+            // Latitude & Longitude
+            $latitude = 0;
+            $longitude = 0;
+
+            if (!empty($item['latlng']) && count($item['latlng']) >= 2) {
+
+                $latitude = $item['latlng'][0];
+                $longitude = $item['latlng'][1];
+            }
+
+            // Flag
+            $flag = null;
+
+            if (!empty($item['flags']['png'])) {
+
+                $flag = $item['flags']['png'];
+            }
+
+            Country::updateOrCreate(
+
+                [
+                    'country_code' => $item['cca2']
+                ],
+
+                [
+                    'country_name' => $item['name']['common'],
+                    'currency_code' => $currencyCode,
+                    'currency_name' => $currencyName,
+                    'region' => $item['region'] ?? '-',
+                    'language' => $language,
+                    'latitude' => $latitude,
+                    'longitude' => $longitude,
+                    'flag' => $flag,
+                    'is_active' => true,
+                ]
+
+            );
+        }
+
+        return redirect()
+            ->route('countries.index')
+            ->with('success', 'Data negara berhasil diimport dari REST Countries API.');
     }
 }

@@ -13,27 +13,35 @@ class ShippingRoute extends Model
 
         'destination_port_id',
 
-        'distance',
+        'distance_km',
 
         'estimated_days',
+
+        'base_cost',
 
         'status'
 
     ];
 
+    /**
+     * Relasi ke Pelabuhan Asal
+     */
     public function originPort(): BelongsTo
-{
-    return $this->belongsTo(
-        Port::class,
-        'origin_port_id'
-    );
-}
+    {
+        return $this->belongsTo(
+            Port::class,
+            'origin_port_id'
+        );
+    }
 
-public function destinationPort(): BelongsTo
-{
-    return $this->belongsTo(
-        Port::class,
-        'destination_port_id'
-    );
-}
+    /**
+     * Relasi ke Pelabuhan Tujuan
+     */
+    public function destinationPort(): BelongsTo
+    {
+        return $this->belongsTo(
+            Port::class,
+            'destination_port_id'
+        );
+    }
 }

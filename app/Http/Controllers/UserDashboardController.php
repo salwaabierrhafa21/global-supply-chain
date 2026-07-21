@@ -9,7 +9,7 @@ use App\Models\ShippingRoute;
 use App\Models\RiskEvent;
 use Illuminate\Support\Facades\Http;
 
-class DashboardController extends Controller
+class UserDashboardController extends Controller
 {
     public function index()
     {
@@ -20,30 +20,24 @@ class DashboardController extends Controller
         */
 
         $countryCount = Country::count();
-
         $economicCount = EconomicData::count();
-
         $portCount = Port::count();
-
         $shippingRouteCount = ShippingRoute::count();
-
         $riskCount = RiskEvent::count();
 
         /*
         |--------------------------------------------------------------------------
-        | Statistik Severity
+        | Statistik Risiko
         |--------------------------------------------------------------------------
         */
 
         $highRisk = RiskEvent::where('severity', 'High')->count();
-
         $mediumRisk = RiskEvent::where('severity', 'Medium')->count();
-
         $lowRisk = RiskEvent::where('severity', 'Low')->count();
 
         /*
         |--------------------------------------------------------------------------
-        | Risk Event Terbaru
+        | Data Terbaru
         |--------------------------------------------------------------------------
         */
 
@@ -52,75 +46,73 @@ class DashboardController extends Controller
             ->take(5)
             ->get();
 
-        /*
-        |--------------------------------------------------------------------------
-        | GDP Terbaru
-        |--------------------------------------------------------------------------
-        */
-
         $latestEconomic = EconomicData::with('country')
             ->latest('recorded_at')
             ->first();
 
-            /*
-|--------------------------------------------------------------------------
-| Weather API
-|--------------------------------------------------------------------------
-*/
+        /*
+        |--------------------------------------------------------------------------
+        | Weather API
+        |--------------------------------------------------------------------------
+        */
 
-$weather = null;
+        $weather = null;
 
-try {
+        try {
 
-    $response = Http::get('https://api.open-meteo.com/v1/forecast', [
+            $response = Http::get(
+                'https://api.open-meteo.com/v1/forecast',
+                [
+                    'latitude' => -6.2088,
+                    'longitude' => 106.8456,
+                    'current' => 'temperature_2m,rain,wind_speed_10m'
+                ]
+            );
 
-        'latitude' => -6.2088,
+            if ($response->successful()) {
+                $weather = $response->json()['current'];
+            }
 
-        'longitude' => 106.8456,
+        } catch (\Exception $e) {
 
-        'current' => 'temperature_2m,rain,wind_speed_10m'
+            $weather = null;
 
-    ]);
+        }
 
-    if ($response->successful()) {
+        /*
+        |--------------------------------------------------------------------------
+        | Currency API
+        |--------------------------------------------------------------------------
+        */
 
-        $weather = $response->json()['current'];
+        $currency = null;
 
-    }
+        try {
 
-} catch (\Exception $e) {
+            $response = Http::get(
+                'https://open.er-api.com/v6/latest/USD'
+            );
 
-    $weather = null;
+            if ($response->successful()) {
 
-}
+                $currency = $response->json();
 
-/*
-|--------------------------------------------------------------------------
-| Currency API
-|--------------------------------------------------------------------------
-*/
+            }
 
-$currency = null;
+        } catch (\Exception $e) {
 
-try {
+            $currency = null;
 
-    $response = Http::get('https://open.er-api.com/v6/latest/USD');
+        }
 
-    if ($response->successful()) {
+        /*
+        |--------------------------------------------------------------------------
+        | View
+        |--------------------------------------------------------------------------
+        */
 
-        $data = $response->json();
+        return view('user.dashboard', compact(
 
-        $currency = $data['rates']['IDR'] ?? null;
-
-    }
-
-} catch (\Exception $e) {
-
-    $currency = null;
-
-}
-
-        return view('dashboard.index', compact(
             'countryCount',
             'economicCount',
             'portCount',
@@ -135,8 +127,7 @@ try {
             'latestEconomic',
 
             'weather',
-
-            'currency',
+            'currency'
 
         ));
     }
