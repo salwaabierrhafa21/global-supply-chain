@@ -14,7 +14,7 @@ use App\Http\Controllers\RiskAnalysisController;
 
 Route::get('/', [DashboardController::class, 'index']);
 
-Route::get('/countries', [CountryController::class, 'index']);
+Route::resource('countries', CountryController::class);
 
 Route::get('/economic-data', [EconomicDataController::class, 'index']);
 

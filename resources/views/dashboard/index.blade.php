@@ -32,7 +32,7 @@
                     </p>
 
                     <h2 class="text-4xl font-bold text-white mt-2">
-                        195
+                        {{ $countryCount }}
                     </h2>
 
                 </div>
@@ -59,7 +59,7 @@
                     </p>
 
                     <h2 class="text-4xl font-bold text-white mt-2">
-                        325
+                        {{ $economicCount }}
                     </h2>
 
                 </div>
@@ -86,7 +86,7 @@
                     </p>
 
                     <h2 class="text-4xl font-bold text-white mt-2">
-                        1,245
+                        {{ $shippingRouteCount }}
                     </h2>
 
                 </div>
@@ -113,7 +113,7 @@
                     </p>
 
                     <h2 class="text-4xl font-bold text-white mt-2">
-                        16
+                        {{ $riskCount }}
                     </h2>
 
                 </div>
